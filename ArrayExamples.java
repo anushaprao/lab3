@@ -31,12 +31,18 @@ public class ArrayExamples {
     if(arr.length < 2) { return 0.0; }
     double lowest = arr[0];
     for(double num: arr) {
-      if(num < lowest) { lowest = num; }
+      if(num < lowest) {
+         lowest = num; }
     }
     double sum = 0;
+    int count = 0;
     for(double num: arr) {
-      if(num != lowest) { sum += num; }
+      if (num == lowest){
+        count += 1;
+      }
+      if(count > 1 || num != lowest) { sum += num; }
     }
+    //return sum;
     return sum / (arr.length - 1);
   }
 
