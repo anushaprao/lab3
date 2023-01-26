@@ -3,6 +3,17 @@ import java.util.List;
 
 interface StringChecker { boolean checkString(String s); }
 
+class StringCheck implements StringChecker{
+  public boolean checkString(String s){
+    if(Character.isLetterOrDigit(s.charAt(0))|| (s.charAt(0) == '_')){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+}
+
 class ListExamples {
 
   // Returns a new list that has all the elements of the input list for which
@@ -10,9 +21,13 @@ class ListExamples {
   // the same order they appeared in the input list;
   static List<String> filter(List<String> list, StringChecker sc) {
     List<String> result = new ArrayList<>();
+    int count = 0;
     for(String s: list) {
+      //int count = 0;
       if(sc.checkString(s)) {
-        result.add(0, s);
+        //count += 1;
+        result.add(count, s);
+        count += 1;
       }
     }
     return result;

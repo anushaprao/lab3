@@ -42,7 +42,6 @@ public class ArrayExamples {
       }
       if(count > 1 || num != lowest) { sum += num; }
     }
-    //return sum;
     return sum / (arr.length - 1);
   }
 
